@@ -3,7 +3,7 @@ package cli
 import (
 	"os"
 
-	"github.com/bobg/go-generics/v2/slices"
+	"github.com/bobg/go-generics/v3/slices"
 )
 
 var globalExitManager = &exitManager{}

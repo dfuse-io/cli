@@ -1,8 +1,11 @@
 module github.com/streamingfast/cli
 
-go 1.18
+go 1.22
+
+toolchain go1.22.0
 
 require (
+	github.com/bobg/go-generics/v3 v3.4.0
 	github.com/lithammer/dedent v1.1.0
 	github.com/manifoldco/promptui v0.8.0
 	github.com/spf13/cobra v1.1.3
@@ -14,11 +17,8 @@ require (
 	go.uber.org/zap v1.21.0
 )
 
-require golang.org/x/exp v0.0.0-20230213192124-5e25df0256eb // indirect
-
 require (
 	github.com/blendle/zapdriver v1.3.1 // indirect
-	github.com/bobg/go-generics/v2 v2.1.1
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
