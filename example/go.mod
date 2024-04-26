@@ -9,3 +9,5 @@ require (
 	github.com/streamingfast/logging v0.0.0-20230608130331-f22c91403091
 	go.uber.org/zap v1.21.0
 )
+
+replace github.com/streamingfast/cli => /Users/maoueh/work/sf/cli
