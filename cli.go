@@ -203,8 +203,8 @@ func ConfigureViper(envPrefix string) CommandOption {
 //
 //	if vcs.revision == "" && vcs.time == "" return "{version}"
 //	if vcs.revision != "" && vcs.time == "" return "{version} (Commit {vcs.revision[0:7]})"
-//	if vcs.revision == "" && vcs.time == "" return "{version} (Built {vcs.date})"
-//	if vcs.revision != "" && vcs.time != "" return "{version} (Commit {vcs.revision[0:7]}, Built {vcs.date})"
+//	if vcs.revision == "" && vcs.time == "" return "{version} (Commit Date {vcs.date})"
+//	if vcs.revision != "" && vcs.time != "" return "{version} (Commit {vcs.revision[0:7]}, Commit Date {vcs.date})"
 func ConfigureVersion(version string) CommandOption {
 	return CommandOptionFunc(func(cmd *cobra.Command) {
 		info, ok := debug.ReadBuildInfo()
@@ -221,7 +221,7 @@ func ConfigureVersion(version string) CommandOption {
 		}
 
 		if date != "" {
-			labels = append(labels, fmt.Sprintf("Built %s", date))
+			labels = append(labels, fmt.Sprintf("Commit Date %s", date))
 		}
 
 		if len(labels) == 0 {
