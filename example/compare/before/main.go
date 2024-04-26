@@ -6,7 +6,6 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/streamingfast/cli"
-	. "github.com/streamingfast/cli"
 	"github.com/streamingfast/logging"
 	"go.uber.org/zap"
 )
@@ -44,7 +43,7 @@ var compareCmd = &cobra.Command{
 	RunE: compareE,
 }
 
-func before() {
+func main() {
 	logging.InstantiateLoggers()
 
 	rootCmd.AddCommand(generateCmd)
