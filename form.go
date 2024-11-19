@@ -5,8 +5,6 @@ import (
 	"github.com/charmbracelet/huh"
 )
 
-package cli
-
 func RunConfirmForm(title string) (bool, error) {
 	confirmOverwrite := true
 
