@@ -352,9 +352,14 @@ func Dedent(input string) string {
 	return strings.TrimSpace(dedent.Dedent(input))
 }
 
-// FlagDescription accepts a multi line indented description and transform it into a single line flag description.
-// This method is used to make it easier to define long flag messages.
+// FlagDescription accepts a multi line indented description and transform it into a multi line flag description.
 func FlagDescription(in string, args ...interface{}) string {
+	return fmt.Sprintf(string(Description(in)), args...)
+}
+
+// FlagDescriptionOneLine accepts a multi line indented description and transform it into a single line flag description.
+// This method is used to make it easier to define long flag messages.
+func FlagDescriptionOneLine(in string, args ...interface{}) string {
 	return fmt.Sprintf(strings.Join(strings.Split(string(Description(in)), "\n"), " "), args...)
 }
 
